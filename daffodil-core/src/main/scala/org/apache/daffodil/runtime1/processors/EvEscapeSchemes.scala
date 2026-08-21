@@ -142,7 +142,7 @@ class EscapeSchemeBlockParseEv(
   ci: DPathCompileInfo
 ) extends EscapeSchemeParseEv(ci) {
 
-  override val runtimeDependencies = optEscapeEscapeChar.toList.toArray
+  override val runtimeDependencies = optEscapeEscapeChar.toArray
 
   val bs = EscapeBlockStartCooker.convertConstant(blockStart, ci, forUnparse = false)
   val be = EscapeBlockEndCooker.convertConstant(blockEnd, ci, forUnparse = false)

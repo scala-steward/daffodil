@@ -48,6 +48,8 @@ final class Maybe[+T <: AnyRef](val v: AnyRef) extends AnyVal with Serializable 
   //  @inline final def iterator: Iterator[T] = if (isEmpty) collection.Iterator.empty else collection.Iterator.single(get)
   @inline final def toList: List[T] = if (isEmpty) List() else new ::(get, Nil)
   @inline final def toSeq: Seq[T] = toList
+  @inline final def toArray[U >: T: scala.reflect.ClassTag]: Array[U] =
+    if (isEmpty) Array.empty[U] else Array[U](value)
   // @inline final def getOrElse[U >: T](default: U): U = if (isEmpty) default else get
 
   /**

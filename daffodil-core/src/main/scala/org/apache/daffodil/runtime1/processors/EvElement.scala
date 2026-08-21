@@ -183,7 +183,7 @@ class MinLengthInBitsEv(
   ci: DPathCompileInfo
 ) extends LengthInBitsEvBase(ci, lengthUnits, lengthKind) {
 
-  override val runtimeDependencies = maybeCharsetEv.toList.toArray
+  override val runtimeDependencies = maybeCharsetEv.toArray
 
   override protected def lengthInLengthUnits(state: ParseOrUnparseState) = minLen
 }

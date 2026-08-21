@@ -210,7 +210,7 @@ class SimpleTypeRetryUnparser(
 ) extends PrimUnparser
   with SuspendableUnparser {
 
-  override final val runtimeDependencies = maybeUnparserTargetLengthInBitsEv.toList.toArray
+  override final val runtimeDependencies = maybeUnparserTargetLengthInBitsEv.toArray
 
   final override def childProcessors = Vector(vUnparser)
 

@@ -296,7 +296,7 @@ class ElementSpecifiedLengthUnparser(
   with RegularElementUnparserStartEndStrategy
   with ElementSpecifiedLengthMixin {
 
-  override val runtimeDependencies = maybeTargetLengthEv.toList.toArray
+  override val runtimeDependencies = maybeTargetLengthEv.toArray
 
   override def runContentUnparser(state: UState): Unit = {
     computeTargetLength(
@@ -355,7 +355,7 @@ class ElementOVCSpecifiedLengthUnparser(
   with OVCStartEndStrategy
   with ElementSpecifiedLengthMixin {
 
-  override val runtimeDependencies = maybeTargetLengthEv.toList.toArray
+  override val runtimeDependencies = maybeTargetLengthEv.toArray
 
   private def suspendableExpression =
     new ElementOVCSpecifiedLengthUnparserSuspendableExpression(this, expr)
